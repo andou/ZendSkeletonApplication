@@ -9,25 +9,22 @@ class StorelocatorController extends LocalizedController {
 
   protected $_view;
 
+  const TEMPL_PREFIX = 'Storelocator/Storelocator/';
+
   protected function _init() {
     $this->_view = new ViewModel();
-    $this->_view->setTemplate('Storelocator/Storelocator/content/page');
+    $this->_view->setTemplate(self::TEMPL_PREFIX . 'content/page');
 
 
     $headerView = new ViewModel();
-    $headerView->setTemplate('Storelocator/Storelocator/content/header');
-
-    $pageContentView = new ViewModel();
-    $pageContentView->setTemplate('Storelocator/Storelocator/pippo');
+    $headerView->setTemplate(self::TEMPL_PREFIX . 'content/header');
 
 
     $overlayView = new ViewModel();
-    $overlayView->setTemplate('Storelocator/Storelocator/content/overlay');
+    $overlayView->setTemplate(self::TEMPL_PREFIX . 'content/overlay');
 
-    $includsJsView = new ViewModel();
-    $includsJsView->setTemplate('Storelocator/Storelocator/content/include_js');
-
-    $this->_view->addChild($overlayView, 'overlay')->addChild($headerView, 'header')->addChild($includsJsView, 'include_js');
+    $this->_view->addChild($overlayView, 'overlay')
+            ->addChild($headerView, 'header');
 
     parent::_init();
   }
@@ -38,7 +35,7 @@ class StorelocatorController extends LocalizedController {
     $page_content = new ViewModel(array(
         'lang' => $this->getLang(),
     ));
-    $page_content->setTemplate('Storelocator/Storelocator/pages/index');
+    $page_content->setTemplate(self::TEMPL_PREFIX . 'pages/index');
 
     $this->_view->addChild($page_content, 'page_content');
 
@@ -51,7 +48,7 @@ class StorelocatorController extends LocalizedController {
     $page_content = new ViewModel(array(
         'lang' => $this->getLang(),
     ));
-    $page_content->setTemplate('Storelocator/Storelocator/pages/stores');
+    $page_content->setTemplate(self::TEMPL_PREFIX . 'pages/stores');
 
     $this->_view->addChild($page_content, 'page_content');
 
@@ -71,5 +68,4 @@ class StorelocatorController extends LocalizedController {
 //      ));
 //    }
 //  }
-
 }
