@@ -218,10 +218,12 @@
     };
 
     SliderMouseFollower.prototype.getIndexById = function(id) {
-      var i, index, _i, _ref;
+      var el, i, index, _i, _id, _ref;
       index = 0;
       for (i = _i = 0, _ref = this.thumbs_array.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
-        if (this.thumbs_array[i].id === id) {
+        el = $(this.thumbs_array[i]);
+        _id = el.attr('data-id');
+        if (_id === id) {
           index = i;
           break;
         }

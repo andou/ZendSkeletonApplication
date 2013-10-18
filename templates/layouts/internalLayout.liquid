@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>{% block title %}Ermenegildo Zegna Store Locator{% endblock %}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      {{ "screen.css" | asset_url | stylesheet_tag }}
+      <script src="/public/scripts/lib/modernizr-2.6.1.js" type="text/javascript" charset="utf-8"></script>
+      <!-- web font fonts.com -->
+      <!--<script type="text/javascript" src="http://fast.fonts.net/jsapi/13b88c29-eae9-4f7b-be22-b73db30a85f8.js"></script>-->
+      <link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/13b88c29-eae9-4f7b-be22-b73db30a85f8.css"/>
+      <!-- Google Maps -->
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaZuFT0-IAXWyC9_k4psUPPl8qEnod6fU&sensor=true"></script>
+    </head>
+    <body class="internal">
+      {% include "header" %}
+      {% block content %}{% endblock %}
+      {% include "overlay" %}
+      {% include "js-include" %}
+    </body>
+</html>

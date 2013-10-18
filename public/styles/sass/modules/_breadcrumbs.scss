@@ -1,0 +1,28 @@
+.breadcrumbs{
+  background:#f2f2f2;
+  @include pie-clearfix;
+  left:40px;
+  position:relative;
+  >li{
+    height:40px;
+    float:left;
+    >a, >span{
+      @extend %text;
+      padding:0 2em;
+      display:block;
+      color:#2c2c2c;
+      height:40px;
+      line-height:40px;
+      font:{
+        size:$f-10;
+        family:$font-regular;
+      }
+    }
+    >a{
+      @include grey-color(75%, 5, 'false');
+    }
+    >span{
+      @include grey-color(85%, 0, 'false');
+    }
+  }
+}

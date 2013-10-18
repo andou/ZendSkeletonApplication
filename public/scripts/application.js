@@ -7,7 +7,7 @@
   }
 
   $(function() {
-    var direction_panel, element_to_resize, filterList, getIOSVersion, getInternetExplorerVersion, gmap, header, headerController, i, input_boxes, map_div, onWindowResize, onWindowScroll, resized_element, sharing_modules, slider, slider_ref, splash, store_list, tabController, toolbar, window_ref, _i, _j, _k, _ref, _ref1, _ref2,
+    var direction_panel, element_to_resize, filterList, getIOSVersion, getInternetExplorerVersion, gmap, header, headerController, i, input_boxes, map_div, onWindowResize, onWindowScroll, resized_element, scrollbarhelper, sharing_modules, slider, slider_ref, splash, store_list, tabController, toolbar, window_ref, _i, _j, _k, _l, _ref, _ref1, _ref2, _ref3,
       _this = this;
     window_ref = $(window);
     getInternetExplorerVersion = function() {
@@ -77,7 +77,7 @@
     if (filterList.length === 1) {
       new FilterManager(filterList);
     }
-    new ScrollBarHelper;
+    scrollbarhelper = new ScrollBarHelper;
     sharing_modules = $('.js-sharing');
     if (sharing_modules.length > 0) {
       for (i = _i = 0, _ref = sharing_modules.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
@@ -93,22 +93,46 @@
       }
     }
     slider_ref = $('.sliderWrapper');
-    if (slider_ref.length === 1) {
-      slider = new Slider(slider_ref);
-    }
-    element_to_resize = $('.js-dynamic-height');
-    if (element_to_resize.length > 0) {
-      for (i = _k = 0, _ref2 = element_to_resize.length; 0 <= _ref2 ? _k < _ref2 : _k > _ref2; i = 0 <= _ref2 ? ++_k : --_k) {
-        resized_element = new ResizeElement($(element_to_resize[i]));
+    window.sliders = [];
+    if (slider_ref.length > 0) {
+      for (i = _k = 0, _ref2 = slider_ref.length; 0 <= _ref2 ? _k < _ref2 : _k > _ref2; i = 0 <= _ref2 ? ++_k : --_k) {
+        slider = new Slider($(slider_ref[i]));
+        window.sliders.push(slider);
       }
     }
+    element_to_resize = $('.js-dynamic-height');
+    window.elements = [];
+    if (element_to_resize.length > 0) {
+      for (i = _l = 0, _ref3 = element_to_resize.length; 0 <= _ref3 ? _l < _ref3 : _l > _ref3; i = 0 <= _ref3 ? ++_l : --_l) {
+        resized_element = new ResizeElement($(element_to_resize[i]));
+        window.elements.push(resized_element);
+      }
+    }
+    (function() {
+      var ph, s;
+      window.___fourSq = {
+        explicit: false,
+        onReady: function() {
+          var this_widget, widget;
+          this_widget = $(".fc-webicon.foursquare");
+          widget = new fourSq.widget.SaveTo();
+          return widget.attach(this_widget[0]);
+        }
+      };
+      s = document.createElement("script");
+      s.type = "text/javascript";
+      s.src = "http://platform.foursquare.com/js/widgets.js";
+      s.async = true;
+      ph = document.getElementsByTagName("script")[0];
+      return ph.parentNode.insertBefore(s, ph);
+    })();
     onWindowScroll = function() {
       var val;
       return val = window_ref.scrollTop();
     };
     window_ref.scroll(onWindowScroll);
     onWindowResize = function() {
-      var window_h, window_w;
+      var window_h, window_w, _m, _n, _ref4, _ref5;
       window_w = window_ref.width();
       window_h = window_ref.height();
       if (window_w >= window.phone_break_point) {
@@ -131,8 +155,18 @@
       if (typeof direction_list_iscroll !== "undefined" && direction_list_iscroll !== null) {
         direction_list_iscroll.refresh();
       }
-      if (resized_element != null) {
-        resized_element.onResize(window_w, window_h);
+      if (elements.length > 0) {
+        for (i = _m = 0, _ref4 = elements.length; 0 <= _ref4 ? _m < _ref4 : _m > _ref4; i = 0 <= _ref4 ? ++_m : --_m) {
+          window.elements[i].onResize(window_w, window_h);
+        }
+      }
+      if (sliders.length > 0) {
+        for (i = _n = 0, _ref5 = sliders.length; 0 <= _ref5 ? _n < _ref5 : _n > _ref5; i = 0 <= _ref5 ? ++_n : --_n) {
+          window.sliders[i].onResize(window_w, window_h);
+        }
+      }
+      if (slider != null) {
+        slider.onResize();
       }
       if (!window.desktop_size && (typeof mobileController === "undefined" || mobileController === null)) {
         window.mobileController = new MobileController(header, toolbar);

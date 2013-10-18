@@ -1,0 +1,2 @@
+class MobileManager
+	constructor:(@ref)->

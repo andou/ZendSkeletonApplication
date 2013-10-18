@@ -1,0 +1,93 @@
+<section id="toolbar">
+  <ul class="device-hide toolbar-tabber">
+    <li><a class="current js-stores_tab" href="#" title="">Stores</a></li>
+    <li><a class="js-direction_tab" href="#" title="">Direction</a></li>
+  </ul>
+  <div class="toolbar-content">
+    <div class="stores-content">
+      <div class="device-hide search-wrapper">
+        <form action="toolbar_submit" method="get" accept-charset="utf-8">
+          <label for="search" class="device-hide label" >Find a Store</label>
+          <input class="input-js" id="search" type="text" name="" value="Milan, Italy" placeholder="" suggest="Milan, Italy" value="Milan, Italy">
+          <a class="localized device-show" data-icon="G"></a>
+          <input type="submit" name="" value="p">
+        </form>
+      </div>
+      <div id="content" class="device-hide">
+        <div id="wrapSearchResult">
+          <ul id="searchResult">
+         <!-- <li class="item odd">
+            <a href="#" class="storeSummary">
+              <div class="ico-new" data-icon="z"></div>
+              <h2 class="storeName"><span class="icon" data-icon="f"></span><span class="label">Ermenegildo Zegna</span></h2>
+              <p class="storeAddress">Via Monte Napoleone, 27/E, 20100,Milan</p>
+              <p class="storePhone"><span class="icon" data-icon="g"></span><span class="label">+39 02 76006437</span></p>
+              <p class="storeDistance">1.1km</p>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#" class="storeSummary">
+              <div class="ico-new" data-icon="z"></div>
+              <h2 class="storeName"><span class="icon" data-icon="f"></span><span class="label">Ermenegildo Zegna Global Store</span></h2>
+              <p class="storeAddress">Via Monte Napoleone, 27/E, 20100,Milan</p>
+              <p class="storePhone"><span class="icon" data-icon="g"></span><span class="label">+39 02 76006437</span></p>
+              <p class="storeDistance">1.1km</p>
+            </a>
+          </li>
+          <li class="item odd">
+            <a href="#" class="storeSummary">
+              <h2 class="storeName"><span class="icon" data-icon="f"></span><span class="label">Ermenegildo Zegna Global Store</span></h2>
+              <p class="storeAddress">Via Monte Napoleone, 27/E, 20100,Milan</p>
+              <p class="storePhone"><span class="icon" data-icon="g"></span><span class="label">+39 02 76006437</span></p>
+              <p class="storeDistance">1.1km</p>
+            </a>
+          </li>-->
+        </ul>
+        </div>
+        <div id="wrapFilterList" style="display:none;">
+          <a href="#" class="close-filter device-show">Filter by brand <span class="close" data-icon="c"></span> </a>
+          <div id="auxFilterList">
+            <ul class="filterList">
+              <li class="filter"><a href="" title="" data-brand="ermenegildozegna"><span class="check"></span><span>Ermenegildo Zegna</span></a></li>
+              <li class="filter"><a href="" title="" data-brand="zzegna"><span class="check"></span><span>Z Zegna</span></a></li>
+              <li class="filter"><a href="" title="" data-brand="zegnasport"><span class="check"></span><span>Zegna Sport</span></a></li>
+              <li class="filter"><a href="" title="" data-brand="zegnasport"><span class="check"></span><span>Zegna Sport</span></a></li>
+              <li class="filter"><a href="" title="" data-brand="all"><span class="check"></span><span>All</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <footer class="device-hide action-bar">
+        <a class="filter active" href="#" title=""><span>Filter by brand</span><span class="icon-filter"></span></a>
+      </footer>
+    </div>
+    <div class="direction-content">
+      <form target="" action="" id="d_edit_form">
+        <div class="direction">
+          <div class="direction-action">
+            <span class="label">How to get there</span>
+              <ul class="travel-modes">
+              <li><a data-icon="i" class="active" href="" title="" data-travelingmode="driving"></a></li>
+              <li><a data-icon="y"  href="" title="" data-travelingmode="walking"></a></li>
+              <li><a data-icon="o"  href="" title="" data-travelingmode="bicycling"></a></li>
+            </ul>
+            <input type="button" class="address-flip" value="u" />
+          </div>
+          <ul class="addresses-list">
+            <li>
+              <label for="a">a</label>
+              <input id="a" type="text" name="" value="" placeholder="" class="j-address_a">
+            </li>
+            <li>
+              <label for="b">b</label>
+              <input id="b" type="text" name="" value="" placeholder="" class="j-address_b">
+            </li>
+          </ul>
+        </div>
+        <footer class="action-bar">
+            <button class="active" href="#" title=""><span>Get direction</span></button>
+          </footer>
+        </form>
+      <div id="direction-panel-scroller"><div id="directions-panel"></div></div>
+    </div>
+</section>

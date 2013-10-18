@@ -1,0 +1,102 @@
+$breakpoint-media-output  : true;
+$breakpoint-ie-output     : true;
+
+//viewport-grid
+$V-ipad:48em; //ipad mini 768px
+$V-nexus7:37.7em; //603px
+$V-galaxy7:37.5em; //400px
+$V-kindle-fire:36.1em; //600px;
+
+// ---------------------------------------------------------------------------
+// Basic Grid
+
+$total-columns  : 12;
+$column-width   : 4em;
+$gutter-width   : 0em;
+$grid-padding   : 0em;
+
+$show-grid-backgrounds  : true;
+
+$max-screen: 103em 12 ie-max; //1680px
+$mid-screen: 78em 12 ie-mid; //1280px
+$screen: 65em 12 103 ie-screen; // from 1024 to 1680
+//$ipad: $V-ipad 8; //vieport ipad mini 768
+//$tablet: 35em 8 70em ie-tablet;
+$tablet:  8 63em ie-tablet; //tablet senza limite inferiore
+$phablet: 45em 8 60em ie-phablet;
+$phone: 4 45em ie-phone;
+
+
+@include border-box-sizing;
+
+html{
+  overflow:hidden;
+}
+/* Layout */
+body{
+  -webkit-transform-style: preserve-3d;
+  -webkit-user-select:none;
+  -webkit-text-size-adjust:none;
+  line-height:1.5em;
+  overflow:hidden;
+  font:{
+    size:16px;
+    family:$font-serif;
+  }
+  @include at-breakpoint($phone){
+    &.internal{
+      overflow:auto;
+      padding-top:50px;
+    }
+  }
+}
+
+///////////////
+//custom scroll
+///////////////
+.myScrollbarV{
+  position: absolute;
+  z-index: 100;
+  width: 8px;
+  bottom: 2px;
+  top: 2px;
+  right: 5px;
+  >div{
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    background:#d8d8da;
+  }
+}
+
+
+
+//explorer
+  body{
+  scrollbar-base-color: #fff;
+  scrollbar-base-color: #fff;
+  scrollbar-3dlight-color: #d8d8d8;
+  scrollbar-highlight-color: #d8d8d8;
+  scrollbar-track-color: #fff;
+  scrollbar-arrow-color: #d8d8d8;
+  scrollbar-shadow-color: #d8d8d8;
+  scrollbar-dark-shadow-color: #d8d8d8;
+}
+
+
+
+/////
+//map
+/////
+
+#storemap{
+  @include at-breakpoint($phone){
+    position:absolute!important;
+    top:90px;
+    z-index:99;
+   //@include transition(top .3s ease-in-out);
+   //.menu-opened & {
+   //  top:174px;
+   //}
+  }
+}

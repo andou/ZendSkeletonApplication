@@ -1,0 +1,56 @@
+.socialNav{
+  .sharing{
+    list-style: none none;
+    height: 60px;
+    text-align:center;
+    >li{
+      display:inline-block;
+      @include span-columns (1,5);
+      &:first-child{
+        margin-left:0;
+      }
+      a{
+        display:inline-block;
+        line-height:60px;
+        height: 60px;
+        font:{
+          size: $f-40;
+        }
+        color:#a6a6a6;
+        &:hover{
+          color: $color-no-grey;
+        }
+      }
+      &.facebook >a{
+        @include set-icon ('r');
+        &:hover{
+          @include set-icon ('R');
+        }
+      }
+      &.twitter >a{
+        @include set-icon ('q');
+        &:hover{
+          @include set-icon ('Q');
+        }
+      }
+      &.pinterest >a{
+        @include set-icon ('w');
+        &:hover{
+          @include set-icon ('W');
+        }
+      }
+      &.gp >a{
+        @include set-icon ('e');
+        &:hover{
+          @include set-icon ('E');
+        }
+      }
+      &.email >a{
+        @include set-icon ('t');
+        &:hover{
+          @include set-icon ('T');
+        }
+      }
+    }
+  }
+}

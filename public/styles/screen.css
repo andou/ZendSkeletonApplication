@@ -55,10 +55,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-.store-concept-preview .store-concept .btn, .sliderWrapper .wrap-controller .wrap-thumbs .thumbsShow, #toolbar .search-wrapper input[type="submit"], #toolbar .action-bar > a, #toolbar .action-bar > button, .btn-filter-mobile, .infowindow .store-summary .bottom-info .col-right .action > li > a.info {
+.store-concept-preview .store-concept .btn, .sliderWrapper .outerWrapController .thumbsShow, #toolbar .search-wrapper input[type="submit"], #toolbar .action-bar > a, #toolbar .action-bar > button, .btn-filter-mobile, .infowindow .store-summary .bottom-info .col-right .action > li > a.info {
   background-color: #c69c6d;
 }
-.store-concept-preview .store-concept .btn:hover, .sliderWrapper .wrap-controller .wrap-thumbs .thumbsShow:hover, #toolbar .search-wrapper input[type="submit"]:hover, #toolbar .action-bar > a:hover, #toolbar .action-bar > button:hover, .btn-filter-mobile:hover, .infowindow .store-summary .bottom-info .col-right .action > li > a.info:hover {
+.store-concept-preview .store-concept .btn:hover, .sliderWrapper .outerWrapController .thumbsShow:hover, #toolbar .search-wrapper input[type="submit"]:hover, #toolbar .action-bar > a:hover, #toolbar .action-bar > button:hover, .btn-filter-mobile:hover, .infowindow .store-summary .bottom-info .col-right .action > li > a.info:hover {
   background-color: #b88d65;
 }
 
@@ -158,7 +158,7 @@ a, input[type="submit"] {
   font-family: "Proxima N W15 Smbd";
 }
 
-.storeInfoOuterWrap .storeInfoWrap .mainContent .mainContentWrap .contentStore .infoList > li > h3, .storeInfoOuterWrap .storeInfoWrap .sideNav ul > li > a div.linkText > p {
+.storeInfoOuterWrap .storeInfoWrap .mainContent .mainContentWrap .contentStore .infoList > li > h3, .storeInfoOuterWrap .storeInfoWrap .sideNav > ul > li > a div.linkText > p {
   text-transform: uppercase;
   letter-spacing: 0.3em;
   font-family: "Proxima N W15 Bold";
@@ -206,13 +206,11 @@ input[type="text"].active {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#header .welcome .logo.btn-menu .icon-menu:before, .menu-opened #header .welcome .logo.btn-menu .icon-menu:before, #toolbar .action-bar > a .icon-filter:before, #toolbar .action-bar > button .icon-filter:before, #toolbar .action-bar > a.active .icon-filter:before, #toolbar .action-bar > button.active .icon-filter:before, .filterList > li > a .check:before, .filterList > li > a.active .check:before, .btn-filter-mobile .icon-filter:before, .storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a.facebook:before, .storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a.facebook:hover:before, .storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a.twitter:before, .storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a.twitter:hover:before, .storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a.pin:before, .storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a.pin:hover:before, .storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a.gplus:before, .storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a.gplus:hover:before, .storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a.email:before, .storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a.email:hover:before {
+#header .welcome .logo.btn-menu .icon-menu:before, .menu-opened #header .welcome .logo.btn-menu .icon-menu:before, .socialNav .sharing > li.facebook > a:before, .socialNav .sharing > li.facebook > a:hover:before, .socialNav .sharing > li.twitter > a:before, .socialNav .sharing > li.twitter > a:hover:before, .socialNav .sharing > li.pinterest > a:before, .socialNav .sharing > li.pinterest > a:hover:before, .socialNav .sharing > li.gp > a:before, .socialNav .sharing > li.gp > a:hover:before, .socialNav .sharing > li.email > a:before, .socialNav .sharing > li.email > a:hover:before, #toolbar .action-bar > a .icon-filter:before, #toolbar .action-bar > button .icon-filter:before, #toolbar .action-bar > a.active .icon-filter:before, #toolbar .action-bar > button.active .icon-filter:before, .filterList > li > a .check:before, .filterList > li > a.active .check:before, .btn-filter-mobile .icon-filter:before {
   speak: none;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
-  vertical-align: middle;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -637,34 +635,60 @@ input[type="text"].active {
 .ie-phone #header .navigation-bar > ul > li a.store-list.active {
   background-color: #c69c6d;
 }
-#header .navigation-bar > ul > li a.store-concept {
+#header .navigation-bar > ul > li a.store-concept, #header .navigation-bar > ul > li a.store-concept-link {
   background-color: #666666;
 }
-#header .navigation-bar > ul > li a.store-concept:hover {
+#header .navigation-bar > ul > li a.store-concept:hover, #header .navigation-bar > ul > li a.store-concept-link:hover {
   background-color: #595959;
 }
-#header .navigation-bar > ul > li a.store-concept.active {
+#header .navigation-bar > ul > li a.store-concept.active, #header .navigation-bar > ul > li a.store-concept-link.active {
   background-color: #c69c6d;
 }
 @media (max-width: 45em) {
-  #header .navigation-bar > ul > li a.store-concept {
+  #header .navigation-bar > ul > li a.store-concept, #header .navigation-bar > ul > li a.store-concept-link {
     background-color: #262626;
   }
-  #header .navigation-bar > ul > li a.store-concept:hover {
+  #header .navigation-bar > ul > li a.store-concept:hover, #header .navigation-bar > ul > li a.store-concept-link:hover {
     background-color: #1a1a1a;
   }
-  #header .navigation-bar > ul > li a.store-concept.active {
+  #header .navigation-bar > ul > li a.store-concept.active, #header .navigation-bar > ul > li a.store-concept-link.active {
     background-color: #c69c6d;
   }
 }
-.ie-phone #header .navigation-bar > ul > li a.store-concept {
+.ie-phone #header .navigation-bar > ul > li a.store-concept, .ie-phone #header .navigation-bar > ul > li a.store-concept-link {
   background-color: #262626;
 }
-.ie-phone #header .navigation-bar > ul > li a.store-concept:hover {
+.ie-phone #header .navigation-bar > ul > li a.store-concept:hover, .ie-phone #header .navigation-bar > ul > li a.store-concept-link:hover {
   background-color: #1a1a1a;
 }
-.ie-phone #header .navigation-bar > ul > li a.store-concept.active {
+.ie-phone #header .navigation-bar > ul > li a.store-concept.active, .ie-phone #header .navigation-bar > ul > li a.store-concept-link.active {
   background-color: #c69c6d;
+}
+#header .navigation-bar > ul > li.wrap-store-concept {
+  display: block;
+}
+.internal #header .navigation-bar > ul > li.wrap-store-concept {
+  display: none;
+}
+#header .navigation-bar > ul > li.wrap-store-concept-link {
+  display: none;
+}
+.internal #header .navigation-bar > ul > li.wrap-store-concept-link {
+  display: block;
+}
+@media (max-width: 45em) {
+  #header .navigation-bar > ul > li.wrap-store-concept {
+    display: none;
+  }
+  #header .navigation-bar > ul > li.wrap-store-concept-link {
+    display: block;
+  }
+}
+.ie-phone #header .navigation-bar > ul > li.wrap-store-concept {
+  display: none;
+}
+.ie-phone #header .navigation-bar > ul > li.wrap-store-concept-link {
+  display: block;
 }
 #header .action-bar-mobile {
   float: right;
@@ -746,6 +770,8 @@ input[type="text"].active {
 
 .sliderWrapper {
   *zoom: 1;
+  position: relative;
+  overflow: hidden;
 }
 .sliderWrapper:after {
   content: "";
@@ -753,6 +779,8 @@ input[type="text"].active {
   clear: both;
 }
 .sliderWrapper .slider {
+  z-index: 99;
+  position: relative;
   width: 100%;
   float: left;
   margin-right: 0%;
@@ -771,11 +799,45 @@ input[type="text"].active {
   display: block;
   width: 100%;
 }
+.sliderWrapper .outerWrapController {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+  height: 85px;
+}
+.sliderWrapper .outerWrapController .thumbsShow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 85px;
+  height: 85px;
+  line-height: 80px;
+  text-align: center;
+  font-size: 2.5em;
+}
+.sliderWrapper .outerWrapController .thumbsHide {
+  position: absolute;
+  left: 0;
+  width: 85px;
+  height: 85px;
+  top: 0;
+  background-color: #595959;
+  color: #fff;
+  line-height: 80px;
+  text-align: center;
+  font-size: 2.5em;
+}
+.sliderWrapper .outerWrapController .thumbsHide:hover {
+  background-color: #4d4d4d;
+}
+.sliderWrapper .outerWrapController .thumbsHide.active {
+  background-color: #c69c6d;
+}
 .sliderWrapper .wrap-controller {
   position: relative;
-  width: 100%;
+  margin-left: 85px;
   height: 85px;
-  bottom: 0;
 }
 .sliderWrapper .wrap-controller .progress-bar {
   position: relative;
@@ -795,36 +857,7 @@ input[type="text"].active {
   height: 80px;
   background: #000;
   overflow: hidden;
-  width: 100%;
   position: relative;
-}
-.sliderWrapper .wrap-controller .wrap-thumbs .thumbsShow {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 80px;
-  height: 80px;
-  line-height: 80px;
-  text-align: center;
-  font-size: 2.5em;
-}
-.sliderWrapper .wrap-controller .wrap-thumbs .thumbsHide {
-  position: absolute;
-  left: 0;
-  width: 80px;
-  height: 80px;
-  top: 0;
-  background-color: #595959;
-  color: #fff;
-  line-height: 80px;
-  text-align: center;
-  font-size: 2.5em;
-}
-.sliderWrapper .wrap-controller .wrap-thumbs .thumbsHide:hover {
-  background-color: #4d4d4d;
-}
-.sliderWrapper .wrap-controller .wrap-thumbs .thumbsHide.active {
-  background-color: #c69c6d;
 }
 .sliderWrapper .wrap-controller .wrap-thumbs .thumb-list {
   left: 80px;
@@ -900,6 +933,72 @@ input[type="text"].active {
 }
 .breadcrumbs > li > span.active {
   background-color: #c69c6d;
+}
+
+.socialNav .sharing {
+  list-style: none none;
+  height: 60px;
+  text-align: center;
+}
+.socialNav .sharing > li {
+  display: inline-block;
+  width: 20%;
+  float: left;
+  margin-right: 0%;
+  display: inline;
+}
+.socialNav .sharing > li:first-child {
+  margin-left: 0;
+}
+.socialNav .sharing > li a {
+  display: inline-block;
+  line-height: 60px;
+  height: 60px;
+  font-size: 2.5em;
+  color: #a6a6a6;
+}
+.socialNav .sharing > li a:hover {
+  color: #c69c6d;
+}
+.socialNav .sharing > li.facebook > a:before {
+  font-family: "IconFont";
+  content: "r";
+}
+.socialNav .sharing > li.facebook > a:hover:before {
+  font-family: "IconFont";
+  content: "R";
+}
+.socialNav .sharing > li.twitter > a:before {
+  font-family: "IconFont";
+  content: "q";
+}
+.socialNav .sharing > li.twitter > a:hover:before {
+  font-family: "IconFont";
+  content: "Q";
+}
+.socialNav .sharing > li.pinterest > a:before {
+  font-family: "IconFont";
+  content: "w";
+}
+.socialNav .sharing > li.pinterest > a:hover:before {
+  font-family: "IconFont";
+  content: "W";
+}
+.socialNav .sharing > li.gp > a:before {
+  font-family: "IconFont";
+  content: "e";
+}
+.socialNav .sharing > li.gp > a:hover:before {
+  font-family: "IconFont";
+  content: "E";
+}
+.socialNav .sharing > li.email > a:before {
+  font-family: "IconFont";
+  content: "t";
+}
+.socialNav .sharing > li.email > a:hover:before {
+  font-family: "IconFont";
+  content: "T";
 }
 
 #toolbar {
@@ -2031,7 +2130,7 @@ body .gm-style div .gm-iw div {
   border-top-right-radius: 3px;
 }
 .infowindow .footer {
-  background: url(../images/box-test.png) center bottom no-repeat transparent;
+  background: url(/public/images/box-test.png) center bottom no-repeat transparent;
   height: 14px;
   width: 100%;
 }
@@ -2044,9 +2143,6 @@ body .gm-style div .gm-iw div {
   top: 0;
   left: 0;
   width: 100%;
-  float: left;
-  margin-right: 0%;
-  display: inline;
   position: absolute;
   display: none;
 }
@@ -2054,14 +2150,12 @@ body .gm-style div .gm-iw div {
   display: none;
   background-color: #fff;
   color: #000;
-  padding: 1%;
-  width: 33.33333%;
-  float: left;
-  margin-right: 0%;
-  display: inline;
-  margin-left: 33.33333%;
-  min-height: 200px;
-  margin-top: 20%;
+  padding: 1em;
+  width: 460px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -125px 0 0 -280px;
 }
 .wrap-overlay .overlay .locateFail h1.logo {
   text-align: center;
@@ -2094,10 +2188,36 @@ body .gm-style div .gm-iw div {
   letter-spacing: 2px;
   padding: 10px 0;
 }
+.wrap-overlay .overlay .locateFail .locateClient .wrap-search {
+  *zoom: 1;
+  width: 400px;
+  margin: 0 auto;
+}
+.wrap-overlay .overlay .locateFail .locateClient .wrap-search:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (max-width: 45em) {
+  .wrap-overlay .overlay .locateFail .locateClient .wrap-search {
+    width: 350px;
+  }
+}
+.ie-phone .wrap-overlay .overlay .locateFail .locateClient .wrap-search {
+  width: 350px;
+}
 .wrap-overlay .overlay .locateFail .locateClient input[type="text"] {
-  width: 84%;
+  width: 355px;
   float: left;
   background-color: #F2F2F2;
+}
+@media (max-width: 45em) {
+  .wrap-overlay .overlay .locateFail .locateClient input[type="text"] {
+    width: 305px;
+  }
+}
+.ie-phone .wrap-overlay .overlay .locateFail .locateClient input[type="text"] {
+  width: 305px;
 }
 .wrap-overlay .overlay .locateFail .locateClient input[type="text"]:focus {
   outline: 1px solid #c69c6d;
@@ -2115,28 +2235,11 @@ body .gm-style div .gm-iw div {
   margin-top: 2px;
 }
 @media (max-width: 45em) {
-  .wrap-overlay .overlay .locateFail .locateClient input[type="text"] {
-    width: 100%;
-    display: block;
-    padding: 14px 0;
-  }
-  .wrap-overlay .overlay .locateFail .locateClient input[type="submit"] {
-    width: 100%;
-  }
-}
-.ie-phone .wrap-overlay .overlay .locateFail .locateClient input[type="text"] {
-  width: 100%;
-  display: block;
-  padding: 14px 0;
-}
-.ie-phone .wrap-overlay .overlay .locateFail .locateClient input[type="submit"] {
-  width: 100%;
-}
-@media (max-width: 45em) {
   .wrap-overlay .overlay .locateFail {
     width: 96%;
-    margin-left: 0%;
-    margin-left: 1%;
+    margin-left: -48%;
+    top: 50px;
+    margin-top: 2%;
   }
   .wrap-overlay .overlay .locateFail input {
     -webkit-appearance: none;
@@ -2145,8 +2248,9 @@ body .gm-style div .gm-iw div {
 }
 .ie-phone .wrap-overlay .overlay .locateFail {
   width: 96%;
-  margin-left: 0%;
-  margin-left: 1%;
+  margin-left: -48%;
+  top: 50px;
+  margin-top: 2%;
 }
 .ie-phone .wrap-overlay .overlay .locateFail input {
   -webkit-appearance: none;
@@ -2161,6 +2265,34 @@ body .gm-style div .gm-iw div {
   content: "";
   display: table;
   clear: both;
+}
+.storeInfoOuterWrap .goBack {
+  position: fixed;
+  left: 0;
+  top: 78px;
+  z-index: 9;
+  height: 40px;
+  line-height: 40px;
+  display: block;
+  text-align: center;
+  width: 40px;
+  color: #fff;
+  font-size: 1.5em;
+  background-color: #a6a6a6;
+}
+.storeInfoOuterWrap .goBack:hover {
+  background-color: #999999;
+}
+.storeInfoOuterWrap .goBack.active {
+  background-color: #c69c6d;
+}
+@media (max-width: 45em) {
+  .storeInfoOuterWrap .goBack {
+    top: 50px;
+  }
+}
+.ie-phone .storeInfoOuterWrap .goBack {
+  top: 50px;
 }
 .storeInfoOuterWrap .storeInfoWrap {
   *zoom: 1;
@@ -2180,7 +2312,6 @@ body .gm-style div .gm-iw div {
     width: 100%;
     float: left;
     margin-right: 0%;
-    overflow: hidden;
   }
 }
 .ie-phone .storeInfoOuterWrap .storeInfoWrap {
@@ -2188,170 +2319,96 @@ body .gm-style div .gm-iw div {
   float: left;
   margin-right: 0%;
   display: inline;
-  overflow: hidden;
-}
-.storeInfoOuterWrap .storeInfoWrap .sidebar {
-  width: 40px;
-  background-color: #F2F2F2;
-  z-index: 9;
-  position: fixed;
-  left: 0;
-  top: 78px;
-}
-.storeInfoOuterWrap .storeInfoWrap .sidebar .goBack {
-  height: 40px;
-  line-height: 40px;
-  width: 40px;
-  color: #fff;
-  font-size: 1.5em;
-  font-weight: bold;
-  background-color: #a6a6a6;
-  display: block;
-  text-align: center;
-}
-.storeInfoOuterWrap .storeInfoWrap .sidebar .goBack:hover {
-  background-color: #999999;
-}
-.storeInfoOuterWrap .storeInfoWrap .sidebar .goBack.active {
-  background-color: #c69c6d;
-}
-@media (max-width: 45em) {
-  .storeInfoOuterWrap .storeInfoWrap .sidebar .goBack {
-    font-size: 1.5em;
-    font-weight: 600;
-  }
-}
-.ie-phone .storeInfoOuterWrap .storeInfoWrap .sidebar .goBack {
-  font-size: 1.5em;
-  font-weight: 600;
-}
-@media (max-width: 45em) {
-  .storeInfoOuterWrap .storeInfoWrap .sidebar {
-    background-color: transparent;
-    position: fixed;
-    top: 50px;
-    left: 0;
-    -webkit-transition-property: all;
-    -moz-transition-property: all;
-    -o-transition-property: all;
-    transition-property: all;
-    -webkit-transition-duration: 0.5;
-    -moz-transition-duration: 0.5;
-    -o-transition-duration: 0.5;
-    transition-duration: 0.5;
-    -webkit-transition-timing-function: ease-in-out;
-    -moz-transition-timing-function: ease-in-out;
-    -o-transition-timing-function: ease-in-out;
-    transition-timing-function: ease-in-out;
-  }
-}
-.ie-phone .storeInfoOuterWrap .storeInfoWrap .sidebar {
-  background-color: transparent;
-  position: fixed;
-  top: 50px;
-  left: 0;
-  transition-property: all;
-  transition-duration: 0.5;
-  transition-timing-function: ease-in-out;
 }
 .storeInfoOuterWrap .storeInfoWrap .socialNav {
   width: 100%;
+  height: 60px;
+  position: relative;
+  *zoom: 1;
+}
+.storeInfoOuterWrap .storeInfoWrap .socialNav:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.storeInfoOuterWrap .storeInfoWrap .socialNav .sharing {
+  background-color: #E6E6E6;
+  width: 66.66667%;
   float: left;
   margin-right: 0%;
   display: inline;
-  height: 70px;
-  position: relative;
-}
-.storeInfoOuterWrap .storeInfoWrap .socialNav > ul {
-  list-style: none none;
-  margin-top: 15px;
-  height: 60px;
-}
-.storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li {
-  float: right;
-  margin-right: 15px;
 }
 @media (max-width: 45em) {
-  .storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li {
-    float: none;
-    display: inline-block;
-    text-align: center;
-    padding: 0;
-    margin-right: 3.5%;
+  .storeInfoOuterWrap .storeInfoWrap .socialNav .sharing {
+    width: 83.33333%;
+    float: left;
+    margin-right: 0%;
   }
 }
-.ie-phone .storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li {
-  float: none;
+.ie-phone .storeInfoOuterWrap .storeInfoWrap .socialNav .sharing {
+  width: 83.33333%;
+  float: left;
+  margin-right: 0%;
+  display: inline;
+}
+.storeInfoOuterWrap .storeInfoWrap .socialNav .foursquare {
+  *zoom: 1;
+  background-color: #cccccc;
+  width: 33.33333%;
+  float: left;
+  margin-right: 0%;
+  display: inline;
+  color: #979797;
+  text-align: center;
+}
+.storeInfoOuterWrap .storeInfoWrap .socialNav .foursquare:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.storeInfoOuterWrap .storeInfoWrap .socialNav .foursquare:hover {
+  background-color: #bfbfbf;
+}
+.storeInfoOuterWrap .storeInfoWrap .socialNav .foursquare.active {
+  background-color: #c69c6d;
+}
+@media (max-width: 45em) {
+  .storeInfoOuterWrap .storeInfoWrap .socialNav .foursquare {
+    width: 16.66667%;
+    float: left;
+    margin-right: 0%;
+  }
+}
+.ie-phone .storeInfoOuterWrap .storeInfoWrap .socialNav .foursquare {
+  width: 16.66667%;
+  float: left;
+  margin-right: 0%;
+  display: inline;
+}
+.storeInfoOuterWrap .storeInfoWrap .socialNav .foursquare .icon {
   display: inline-block;
-  text-align: center;
-  padding: 0;
-  margin-right: 3.5%;
+  height: 60px;
+  line-height: 60px;
+  font-size: 1.875em;
 }
-.storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a {
-  font-size: 2.5em;
-  font-weight: 900;
-  color: #C2C2C2;
-}
-.storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a:hover {
-  color: #c69c6d;
-}
-.storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a.facebook:before {
-  font-family: "IconFont";
-  content: "r";
-}
-.storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a.facebook:hover:before {
-  font-family: "IconFont";
-  content: "R";
-}
-.storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a.twitter:before {
-  font-family: "IconFont";
-  content: "q";
-}
-.storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a.twitter:hover:before {
-  font-family: "IconFont";
-  content: "Q";
-}
-.storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a.pin:before {
-  font-family: "IconFont";
-  content: "w";
-}
-.storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a.pin:hover:before {
-  font-family: "IconFont";
-  content: "W";
-}
-.storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a.gplus:before {
-  font-family: "IconFont";
-  content: "e";
-}
-.storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a.gplus:hover:before {
-  font-family: "IconFont";
-  content: "E";
-}
-.storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a.email:before {
-  font-family: "IconFont";
-  content: "t";
-}
-.storeInfoOuterWrap .storeInfoWrap .socialNav > ul > li a.email:hover:before {
-  font-family: "IconFont";
-  content: "T";
+.storeInfoOuterWrap .storeInfoWrap .socialNav .foursquare .icon > span {
+  display: inline-block;
+  text-align: left;
+  line-height: 1.3em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  vertical-align: top;
+  padding: 18px 0 0 10px;
+  font-size: 0.3em;
+  font-family: "Proxima N W15 Reg";
 }
 @media (max-width: 45em) {
-  .storeInfoOuterWrap .storeInfoWrap .socialNav {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    background-color: #E6E6E6;
-    z-index: 9;
-    text-align: center;
+  .storeInfoOuterWrap .storeInfoWrap .socialNav .foursquare .icon > span {
+    display: none;
   }
 }
-.ie-phone .storeInfoOuterWrap .storeInfoWrap .socialNav {
-  position: relative;
-  bottom: 0;
-  left: 0;
-  background-color: #E6E6E6;
-  z-index: 9;
-  text-align: center;
+.ie-phone .storeInfoOuterWrap .storeInfoWrap .socialNav .foursquare .icon > span {
+  display: none;
 }
 .storeInfoOuterWrap .storeInfoWrap .mainContent {
   *zoom: 1;
@@ -2483,26 +2540,20 @@ body .gm-style div .gm-iw div {
   top: 0;
 }
 .storeInfoOuterWrap .storeInfoWrap .sideNav {
+  height: 80px;
   width: 100%;
-  float: left;
-  margin-right: 0%;
-  display: inline;
-  height: 100px;
-  bottom: 0;
-  left: 0;
-  z-index: 9;
 }
-.storeInfoOuterWrap .storeInfoWrap .sideNav ul {
+.storeInfoOuterWrap .storeInfoWrap .sideNav > ul {
   list-style: none none;
 }
-.storeInfoOuterWrap .storeInfoWrap .sideNav ul > li {
+.storeInfoOuterWrap .storeInfoWrap .sideNav > ul > li {
   background-color: #ffffff;
 }
-.storeInfoOuterWrap .storeInfoWrap .sideNav ul > li > a {
+.storeInfoOuterWrap .storeInfoWrap .sideNav > ul > li > a {
   height: 40px;
   display: block;
 }
-.storeInfoOuterWrap .storeInfoWrap .sideNav ul > li > a .icon {
+.storeInfoOuterWrap .storeInfoWrap .sideNav > ul > li > a .icon {
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -2515,7 +2566,7 @@ body .gm-style div .gm-iw div {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-.storeInfoOuterWrap .storeInfoWrap .sideNav ul > li > a .icon .arrow-right {
+.storeInfoOuterWrap .storeInfoWrap .sideNav > ul > li > a .icon .arrow-right {
   width: 0;
   height: 0;
   border-top: 10px solid transparent;
@@ -2528,54 +2579,54 @@ body .gm-style div .gm-iw div {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-.storeInfoOuterWrap .storeInfoWrap .sideNav ul > li > a .icon.direction {
+.storeInfoOuterWrap .storeInfoWrap .sideNav > ul > li > a .icon.direction {
   background-color: #595959;
 }
-.storeInfoOuterWrap .storeInfoWrap .sideNav ul > li > a .icon.direction .arrow-right {
+.storeInfoOuterWrap .storeInfoWrap .sideNav > ul > li > a .icon.direction .arrow-right {
   border-left: 10px solid #595959;
 }
-.storeInfoOuterWrap .storeInfoWrap .sideNav ul > li > a .icon.direction:hover {
+.storeInfoOuterWrap .storeInfoWrap .sideNav > ul > li > a .icon.direction:hover {
   background-color: #4d4d4d;
 }
-.storeInfoOuterWrap .storeInfoWrap .sideNav ul > li > a .icon.direction:hover .arrow-right {
+.storeInfoOuterWrap .storeInfoWrap .sideNav > ul > li > a .icon.direction:hover .arrow-right {
   border-left: 10px solid #4d4d4d;
 }
-.storeInfoOuterWrap .storeInfoWrap .sideNav ul > li > a .icon.calendar {
+.storeInfoOuterWrap .storeInfoWrap .sideNav > ul > li > a .icon.calendar {
   background-color: #c69c6d;
 }
-.storeInfoOuterWrap .storeInfoWrap .sideNav ul > li > a .icon.calendar .arrow-right {
+.storeInfoOuterWrap .storeInfoWrap .sideNav > ul > li > a .icon.calendar .arrow-right {
   border-left: 10px solid #c69c6d;
 }
-.storeInfoOuterWrap .storeInfoWrap .sideNav ul > li > a .icon.calendar:hover {
+.storeInfoOuterWrap .storeInfoWrap .sideNav > ul > li > a .icon.calendar:hover {
   background-color: #b88d65;
 }
-.storeInfoOuterWrap .storeInfoWrap .sideNav ul > li > a .icon.calendar:hover .arrow-right {
+.storeInfoOuterWrap .storeInfoWrap .sideNav > ul > li > a .icon.calendar:hover .arrow-right {
   border-left: 10px solid #b88d65;
 }
-.storeInfoOuterWrap .storeInfoWrap .sideNav ul > li > a div.linkText {
+.storeInfoOuterWrap .storeInfoWrap .sideNav > ul > li > a div.linkText {
   width: 100%;
   float: left;
   margin-right: 0%;
   display: inline;
   height: 40px;
 }
-.storeInfoOuterWrap .storeInfoWrap .sideNav ul > li > a div.linkText > p {
+.storeInfoOuterWrap .storeInfoWrap .sideNav > ul > li > a div.linkText > p {
   height: 40px;
   padding: 0 0 0 65px;
   color: #000000;
   font-size: 0.688em;
   line-height: 40px;
 }
-.storeInfoOuterWrap .storeInfoWrap .sideNav ul > li > a div.linkText > p > span {
+.storeInfoOuterWrap .storeInfoWrap .sideNav > ul > li > a div.linkText > p > span {
   font-family: Georgia;
   text-transform: none;
 }
 @media (max-width: 45em) {
-  .storeInfoOuterWrap .storeInfoWrap .sideNav ul > li > a div.linkText > p {
+  .storeInfoOuterWrap .storeInfoWrap .sideNav > ul > li > a div.linkText > p {
     font-size: 0.625em;
   }
 }
-.ie-phone .storeInfoOuterWrap .storeInfoWrap .sideNav ul > li > a div.linkText > p {
+.ie-phone .storeInfoOuterWrap .storeInfoWrap .sideNav > ul > li > a div.linkText > p {
   font-size: 0.625em;
 }
 @media (max-width: 45em) {
@@ -2669,7 +2720,6 @@ body .gm-style div .gm-iw div {
   float: left;
   margin-right: 0%;
   display: inline;
-  height: 500px;
 }
 @media (max-width: 45em) {
   .storeConceptOuterWrap .storeConceptSlider {
@@ -2681,7 +2731,7 @@ body .gm-style div .gm-iw div {
 }
 .storeConceptOuterWrap .storeConceptSlider .wrapInfo {
   padding: 50px 35px;
-  width: 25%;
+  width: 41.66667%;
   float: left;
   margin-right: 0%;
   display: inline;
@@ -2689,15 +2739,42 @@ body .gm-style div .gm-iw div {
   position: absolute;
   top: 0;
   bottom: 0;
+  left: 0;
+  z-index: 999;
 }
 .storeConceptOuterWrap .storeConceptSlider .wrapInfo .info {
   padding: 50px 25px;
   border: 1px solid #fff;
   line-height: 1.4em;
-  font-size: 0.75em;
+  font-size: 0.688em;
   font-family: "Proxima N W15 Reg";
   color: #fff;
   text-align: center;
+}
+.storeConceptOuterWrap .storeConceptSlider .wrapInfo .sliderPaginator {
+  position: absolute;
+  left: 0;
+  bottom: 50px;
+  text-align: center;
+  width: 100%;
+}
+.storeConceptOuterWrap .storeConceptSlider .wrapInfo .sliderPaginator > li {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+.storeConceptOuterWrap .storeConceptSlider .wrapInfo .sliderPaginator > li > a {
+  text-indent: -5000px;
+  display: block;
+  border-radius: 50%;
+  background: #fff;
+  width: 15px;
+  height: 15px;
+  border: solid 2px transparent;
+}
+.storeConceptOuterWrap .storeConceptSlider .wrapInfo .sliderPaginator > li > a.active, .storeConceptOuterWrap .storeConceptSlider .wrapInfo .sliderPaginator > li > a:hover {
+  background: transparent;
+  border: solid 2px #fff;
 }
 .storeConceptOuterWrap .storeConceptWrap {
   width: 41.66667%;
@@ -2719,15 +2796,15 @@ body .gm-style div .gm-iw div {
   display: inline;
 }
 .storeConceptOuterWrap .storeConceptWrap .mainContentWrap {
-  padding: 55px 40px;
+  padding: 55px 40px 0;
 }
 @media (max-width: 45em) {
   .storeConceptOuterWrap .storeConceptWrap .mainContentWrap {
-    padding: 40px;
+    padding: 40px 40px 0;
   }
 }
 .ie-phone .storeConceptOuterWrap .storeConceptWrap .mainContentWrap {
-  padding: 40px;
+  padding: 40px 40px 0;
 }
 .storeConceptOuterWrap .storeConceptWrap .mainContentWrap .title {
   display: inline;
@@ -2738,6 +2815,26 @@ body .gm-style div .gm-iw div {
 .storeConceptOuterWrap .storeConceptWrap .mainContentWrap > article > p {
   margin-top: 1em;
   font-size: 0.75em;
+}
+.storeConceptOuterWrap .storeConceptWrap .socialNav {
+  margin: 90px -40px 0;
+}
+@media (max-width: 45em) {
+  .storeConceptOuterWrap .storeConceptWrap .socialNav {
+    margin-top: 55px;
+  }
+}
+.ie-phone .storeConceptOuterWrap .storeConceptWrap .socialNav {
+  margin-top: 55px;
+}
+.storeConceptOuterWrap .storeConceptWrap .socialNav .sharing {
+  background-color: #E6E6E6;
+}
+.storeConceptOuterWrap .storeConceptWrap .socialNav .sharing > li {
+  width: 20%;
+  float: left;
+  margin-right: 0%;
+  display: inline;
 }
 .storeConceptOuterWrap .close {
   top: 0;

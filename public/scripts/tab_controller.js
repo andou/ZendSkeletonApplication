@@ -5,6 +5,8 @@
   window.TabController = (function() {
     function TabController(ref) {
       this.ref = ref;
+      this.onHistoryStateChange = __bind(this.onHistoryStateChange, this);
+      this.checkHistory = __bind(this.checkHistory, this);
       this.onResize = __bind(this.onResize, this);
       this.tabChanged = __bind(this.tabChanged, this);
       this.openDirection = __bind(this.openDirection, this);
@@ -42,6 +44,7 @@
       this.direction_panel.hide();
       this.setInteractions();
       this.setFilterInteraction();
+      this.setHistory();
     }
 
     TabController.prototype.showDirections = function() {
@@ -68,7 +71,17 @@
           _this.stores_content.show();
           _this.direction_content.hide();
           _this.current_tab = "stores";
-          return event_emitter.emitEvent("CURRENT_TAB_IS_CHANGED");
+          event_emitter.emitEvent("CURRENT_TAB_IS_CHANGED");
+          if (!_this.stores_history) {
+            History.pushState({
+              state: _this.current_tab
+            }, "Stores", "stores");
+            return _this.stores_history = true;
+          } else {
+            return History.replaceState({
+              state: _this.current_tab
+            }, "Stores", "stores");
+          }
         }
       });
       return this.direction_tab.click(function(e) {
@@ -81,7 +94,17 @@
           _this.direction_content.show();
           _this.stores_content.hide();
           _this.current_tab = "directions";
-          return event_emitter.emitEvent("CURRENT_TAB_IS_CHANGED");
+          event_emitter.emitEvent("CURRENT_TAB_IS_CHANGED");
+          if (!_this.directions_history) {
+            History.pushState({
+              state: _this.current_tab
+            }, "Directions", "directions");
+            return _this.directions_history = true;
+          } else {
+            return History.replaceState({
+              state: _this.current_tab
+            }, "Directions", "directions");
+          }
         }
       });
     };
@@ -152,6 +175,38 @@
       this.stores_content_filterList.css('height', "" + height_to_assign + "px");
       this.stores_content_auxFilterList.css('height', "" + height_to_assign + "px");
       return this.direction_panel.css('height', "" + direction_height_to_assign + "px");
+    };
+
+    TabController.prototype.setHistory = function() {
+      this.checkHistory();
+      if (!History.enabled) {
+        return false;
+      }
+      this.has_history = true;
+      return History.Adapter.bind(window, 'statechange', this.onHistoryStateChange);
+    };
+
+    TabController.prototype.checkHistory = function() {
+      var state, tab;
+      state = History.getState();
+      tab = state.data["state"];
+      if (tab === "directions") {
+        this.direction_tab.click();
+        return this.directions_history = true;
+      } else if (tab === "stores") {
+        this.stores_tab.click();
+        return this.stores_history = true;
+      } else {
+        History.pushState({
+          state: this.current_tab
+        }, "Stores", "stores");
+        return this.stores_history = true;
+      }
+    };
+
+    TabController.prototype.onHistoryStateChange = function() {
+      var State;
+      return State = History.getState();
     };
 
     return TabController;

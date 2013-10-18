@@ -1,0 +1,29 @@
+<div class='infowindow'>
+  <a class="close" data-icon="a"></a>
+  <div class='content'>
+    <div class='image-container'>
+      <img src= #{@markers[i]['photo']} alt='#{@markers[i]['title']}'>
+    </div>
+    <div class="store-summary">
+      <div class="top-info">
+        <div class="ico-new" data-icon="z"></div>
+        <h2 class="storeName"><span class="label">#{@markers[i]['title']}</span></h2>
+        <p class="storeAddress">Via Monte Napoleone, 20121, 2100, Milano, Italy</p>
+      </div>
+      <div class="bottom-info">
+        <div class="col-left">
+          <p class="storeOpeningHours"><span class='title'>Today Opening Hours</span> <span class="hours">11:00 am - 07:00 pm</span></p>
+          <p class="storePhone"><span class="label">54637782</span></p>
+          <a class='storeEmail'>#{@markers[i]['email']}</a>
+        </div>
+        <div class="col-right">
+          <ul class="action">
+            <li><a href="#" class="icon direction" data-icon="a"></a></li>
+            <li><a href="#"  class="icon calendar" data-icon="s"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='footer'></div>
+</div>

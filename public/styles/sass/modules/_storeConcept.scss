@@ -1,0 +1,106 @@
+.storeConceptOuterWrap{
+  @include pie-clearfix;
+  position:relative;
+  .storeConceptMobileHeader{
+    @include device-show-element($phone);
+    >img{
+      width:100%;
+    }
+  }
+  .storeConceptSlider{
+    @include span-columns(7, 12);
+    @include at-breakpoint($phone){
+      display:none;
+    }
+    .wrapInfo{
+      padding:50px 35px;
+      @include span-columns(5, 12);
+      background:url(../images/bg-info-concept.png) 0 0 repeat;
+      position:absolute;
+      top:0;
+      bottom:0;
+      left: 0;
+      z-index: 999;
+      .info{
+        padding:50px 25px;
+        border:1px solid #fff;
+        @extend %text;
+        line-height:1.4em;
+        font:{
+          size:$f-11;
+          family:$font-regular;
+        }
+        color:#fff;
+        text-align:center;
+      }
+      .sliderPaginator{
+        position:absolute;
+        left:0;
+        bottom:50px;
+        text-align:center;
+        width:100%;
+        >li{
+          display:inline-block;
+          width:25px;
+          height:25px;
+          >a{
+            text-indent:-5000px;
+            display:block;
+            border-radius: 50%;
+            background:#fff;
+            width:15px;
+            height:15px;
+            border:solid 2px transparent;
+            &.active, &:hover{
+              background:transparent;
+              border:solid 2px #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  .storeConceptWrap{
+    @include span-columns(5, 12);
+    @include at-breakpoint($phone){
+      @include span-columns(1, 1);
+    }
+    .mainContentWrap{
+      padding:55px 40px 0;
+      @include at-breakpoint($phone){
+        padding:40px 40px 0;
+      }
+      .title{
+        display:inline;
+        @extend %text;
+      }
+      >article{
+        >p:first-of-type{display:inline;}
+        >p{
+          margin-top:1em;
+          font-size:$f-12;
+        }
+      }
+    }
+    .socialNav{
+      margin:90px -40px 0;
+      @include at-breakpoint($phone){
+        margin-top:55px;
+      }
+      .sharing {
+        background-color: #E6E6E6;
+        >li{
+          @include span-columns(1,5);
+        }
+      }
+    }
+  }
+  .close{
+    top:0;
+    right:0;
+    @include at-breakpoint($phone){
+      position:fixed;
+      top:50px;
+    }
+  }
+}

@@ -1,0 +1,226 @@
+body .gm-style div{
+  text-transform:uppercase;
+  letter-spacing:0em;
+  text-transform:none;
+  font:{
+    family: Arial, sans-serif;
+    size:16px;
+  }
+  .gm-iw{
+    line-height:1.5em;
+    font:{
+      size:$f-15;
+    }
+    div{
+      margin-top:3px;
+      font:{
+        family:$font-serif;
+      }
+      text-transform:none;
+      letter-spacing:0;
+      color:#767472;
+      line-height:1.4em;
+    }
+  }
+}
+
+.infowindow{
+  position:relative;
+  width:324px;
+  @include at-breakpoint($phone){
+    width:280px;
+  }
+  .close{
+    @include border-top-right-radius(3px);
+    @include at-breakpoint($phone){
+      display:none;
+    }
+  }
+  .store-summary{
+    .wrap-top-info{
+      padding:15px 0 15px 15px;
+      background:#f2f2f2;
+      position:relative;
+      border-bottom:1px solid #e1e1e1;
+      @include border-top-left-radius(3px);
+      @include at-breakpoint($phone){
+        padding:0;
+        background:#fff;
+        border:none;
+        margin-bottom:-20px;
+      }
+      .top-info{
+         @include span-columns(10,12);
+         @include at-breakpoint($phone){
+            padding:15px 0 0 15px;
+            min-height:76px;
+         }
+      }
+      @include pie-clearfix;
+      .storeName{
+        @include span-columns(15,20);
+        .label{
+          @extend %text;
+          color:#2c2c2c;
+          display:inline-block;
+          line-height:1.1em;
+          vertical-align:top;
+          font:{
+            size:$f-10;
+            family:$font-bold;
+          }
+        }
+      }
+      .ico-new{
+        //@include span-columns(2,12);
+        position:absolute;
+        right:45px;
+        top:5px;
+        color:#2c2c2c;
+        width:50px;
+        font:{
+          size:3em;
+        }
+        &:before{
+          text-align:right;
+        }
+      }
+      .storeAddress{
+        @include span-columns(15,20);
+        color:#2c2c2c;
+        line-height:1.2em;
+        letter-spacing:0;
+        vertical-align:top;
+        text-transform:none;
+        font:{
+          size:$f-12;
+          family:$font-serif;
+        }
+      }
+      .storeDistance{
+        @include span-columns(5 delta,20);
+        display:block;
+        margin-top:2px;
+        text-align:center;
+        color:#2c2c2c;
+        line-height:1em;
+        letter-spacing:0;
+        text-transform:none;
+        display:none;
+        font:{
+          size:$f-15;
+          family:$font-semibold;
+        }
+        @include at-breakpoint($phone){
+          display:block;
+        }
+      }
+    }
+    .bottom-info{
+      @include pie-clearfix;
+      padding:0 0 0 15px;
+      position:relative;
+      background-color: #fff;
+      @include at-breakpoint($phone){
+        background-color: transparent;
+      }
+      .col-left{
+        background-color: #fff;
+        padding:10px 0 7px;
+        @include span-columns(10,12);
+        @include at-breakpoint($phone){
+          display:none;
+        }
+        .storeOpeningHours{
+          line-height:1em;
+          .title{
+            @extend %text;
+            color:#2c2c2c;
+            line-height:1em;
+            font:{
+              size:$f-10;
+              family:$font-bold;
+            }
+          }
+          .hours{
+            @extend %text;
+            color:#2c2c2c;
+            line-height:1em;
+            text-transform:none;
+            letter-spacing:0;
+            display:block;
+            font:{
+              size:$f-11;
+              family:$font-serif;
+            }
+          }
+        }
+        .storePhone{
+          line-height:1.4em;
+          .label{
+            color:#767472;
+            letter-spacing:0;
+            font:{
+              size:$f-14;
+              family:$font-serif;
+            }
+          }
+        }
+        .storeEmail{
+          color:$color-no-grey;
+          text-decoration:underline;
+          text-transform:none;
+          letter-spacing:0;
+          font:{
+            size:$f-11;
+            family:$font-serif;
+          }
+        }
+      }
+      .col-right{
+        position:absolute;
+        right:0;
+        bottom:-14px;
+        width:40px;
+        .action{
+          >li{
+            >a{
+              width:40px;
+              height:40px;
+              line-height:40px;
+              text-align:center;
+              display:block;
+              color:#fff;
+              font:{
+                size:1.3em;
+              }
+              @include at-breakpoint($phone){
+                width:45px;
+                height:45px;
+                line-height:45px;
+              }
+              &.direction{
+                @include grey-color(35%, 5, 'false');
+                @include border-bottom-right-radius(3px);
+              }
+              &.info{
+                @extend %btn-bgcolor;
+                font:{
+                  size:1.8em;
+                }
+                @include at-breakpoint($phone){
+                  @include border-top-right-radius(3px);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+	.footer{
+		background:url(/public/images/box-test.png) center bottom no-repeat transparent;
+		height:14px;
+		width:100%;
+	}
+}

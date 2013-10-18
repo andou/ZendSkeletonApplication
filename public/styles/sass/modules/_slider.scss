@@ -1,0 +1,115 @@
+.sliderWrapper{
+  @include pie-clearfix;
+  position:relative;
+  overflow:hidden;
+  .slider{
+    z-index:99;
+    position:relative;
+    @include span-columns(1,1);
+    .innerSlider{
+      position:relative;
+      width:100%;
+      .slide{
+        position:absolute;
+        top:0;
+        left:0;
+        img{
+          display:block;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .outerWrapController{
+    position:absolute;
+    bottom:0;
+    width: 100%;
+    z-index:999;
+    height: 85px;
+    .thumbsShow{
+      position:absolute;
+      left:0;
+      top:0;
+      width:85px;
+      height: 85px;
+      @extend %btn-bgcolor;
+      line-height: 80px;
+      text-align:center;
+      font:{
+        size:2.5em;
+      }
+    }
+    .thumbsHide{
+      position:absolute;
+      left:0;
+      width:85px;
+      height: 85px;
+      top:0;
+      @include grey-color(35%, 5, 'false');
+      color:#fff;
+      line-height: 80px;
+      text-align:center;
+      font:{
+        size:2.5em;
+      }
+    }
+  }
+  .wrap-controller{
+    position: relative;
+    margin-left:85px;
+    height: 85px;
+    .progress-bar{
+      position: relative;
+      height: 5px;
+      width: 100%;
+      background: #fff;
+      .current{
+        position: absolute;
+        width: 0px;
+        height: 5px;
+        top: 0;
+        left: 0;
+        background: $color-no-grey;
+      }
+    }
+    .wrap-thumbs{
+      height: 80px;
+      background: #000;
+      overflow: hidden;
+      position: relative;
+      .thumb-list{
+        left:80px;
+        top:0;
+        position:absolute;
+        height:80px;
+        .thumb{
+          position:relative;
+          width: 130px;
+          overflow: hidden;
+          height:80px;
+          float:left;
+          .overlay{
+            width:100%;
+            height:100%;
+            position:absolute;
+            background:#000;
+            top:0;
+            left:0;
+            @include opacity(0.5);
+          }
+          &.disabled{
+            .overlay{
+              cursor:default;
+              @include opacity(0);
+            }
+          }
+          &:hover{
+            .overlay{
+              @include opacity(0);
+            }
+          }
+        }
+      }
+    }
+  }
+}

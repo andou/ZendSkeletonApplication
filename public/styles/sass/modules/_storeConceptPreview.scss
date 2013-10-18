@@ -1,0 +1,77 @@
+.store-concept-preview{
+  width:400px;
+  position:fixed;
+  z-index:999;
+  right:0;
+  top:78px;
+  bottom:0;
+  background:#fff;
+  @include at-breakpoint($phone){
+    display:none;
+  }
+  .close{
+    width:40px;
+    height:40px;
+    line-height:40px;
+    position:absolute;
+    top:0;
+    right:0;
+    text-align:center;
+    z-index:99;
+    font:{
+      size:1.5em;
+    }
+    @include grey-color(88%, 5, 'false');
+    color:#2c2c2c;
+  }
+  .store-concept{
+    padding:20px 10px;
+    text-align:center;
+    .title{
+      overflow:hidden;
+      >span{
+        @extend %text;
+        position:relative;
+        display:inline-block;
+        white-space:nowrap;
+        padding:0 10px;
+        //overflow:hidden;
+        font:{
+          size:$f-12;
+        }
+        &:before {
+          content: "";
+          height: 45%;
+          width:1000px;
+          border-bottom:1px solid $color-no-grey;
+          position: absolute;
+          top: 0;
+          left: -1000px;
+        }
+        &:after {
+          content: "";
+          height: 45%;
+          width:1000px;
+          border-bottom:1px solid $color-no-grey;
+          position: absolute;
+          top: 0;
+          right: -1000px; // +5px compensate "white space" on the right side of the image when algin right on the before
+        }
+      }
+    }
+    .wrap-text{
+      padding:20px 0 40px;
+      >p{
+        color:#2c2c2c;
+        line-height:1.5em;
+        font:{
+          family:$font-serif;
+          size:$f-12;
+        }
+      }
+    }
+    .btn{
+      @extend %btn;
+    }
+  }
+}

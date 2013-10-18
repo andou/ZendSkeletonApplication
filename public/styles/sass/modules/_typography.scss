@@ -1,0 +1,133 @@
+
+a, input[type="submit"]{
+  text-decoration:none;
+  @include transition(all 0.3s ease-out);
+}
+
+%text{
+  text-transform:uppercase;
+  letter-spacing:0.3em;
+  font:{
+    family:$font-semibold;
+  }
+}
+
+%text-bold{
+  text-transform:uppercase;
+  letter-spacing:0.3em;
+  font:{
+    family:$font-bold;
+  }
+}
+
+
+%btn{
+  @extend %btn-bgcolor;
+  @extend %text;
+  font:{
+    size:$f-11;
+  }
+  display:inline-block;
+  color:#fff;
+  padding:10px 25px;
+}
+
+input{
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+//form element
+input[type="text"]{
+  @include grey-color(94%, 5, 'false');
+  @include transition(background 0.3s ease-out);
+  color:#767470;
+  border:none;
+  padding:14px 15px;
+  font:{
+    family:$font-serif;
+    size:$f-14;
+  }
+}
+
+
+//icon
+
+$twitter :  "q";
+$twitter_hover :  "Q";
+$pinterest :  "w";
+$pinterest_hover :  "W";
+$gplus :  "e";
+$gplus_hover :  "E";
+$facebook :  "r";
+$facebook_hover :  "R";
+$send-mail :  "t";
+$send-mail_hover :  "T";
+$flip :  "u";
+$car :  "i";
+$walking :  "y";
+$bicycle :  "o";
+$search :  "p";
+$direction :  "a";
+$calendar :  "s";
+$info :  "d";
+$address :  "f";
+$phone-number :  "g";
+$email :  "h";
+$hours :  "j";
+$notification :  "k";
+$filter-on :  "l";
+$filter-off :  "v";
+$new : "z";
+$back : "x";
+$close :"c";
+$open-filter :"b";
+$close-filter :"n";
+
+
+[data-icon]:before {
+  font-family: $icon-font;
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+%icon-style{
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin set-icon ($icon-var){
+  &:before {
+    font-family: $icon-font;
+    content:$icon-var;
+    @extend %icon-style;
+  }
+}
+
+
+.close{
+  position:absolute;
+  top:0;
+  right:0;
+  z-index:9;
+  font:{
+    size:1.5em;
+  }
+  @include grey-color(88%, 5, 'false');
+  color:#2c2c2c;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  text-align:center;
+}
+
+

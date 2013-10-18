@@ -1,0 +1,250 @@
+//header
+#header{
+  color:#c2c2c2;
+  position:relative;
+  z-index:1000;
+  @include transition(background .2s ease-in-out);
+  @include pie-clearfix;
+  $container-style:fluid;
+  @include at-breakpoint($phone){
+    position:relative;
+    top:0;
+    //position:fixed;
+    width:100%;
+    .internal &{
+      position:fixed;
+    }
+  }
+  .welcome{
+    @include span-columns(1, 2);
+    @include grey-color(10%, 0, 'false');
+    line-height:78px;
+    height:78px;
+    position:relative;
+    z-index:9;
+    @include at-breakpoint ($phone){
+      .menu-opened &{
+        @include grey-color(15%, 0, 'false');
+      }
+    }
+    > span{
+      @include device-hide-element($tablet);
+      @include device-hide-element($phone);
+    }
+    @include at-breakpoint($tablet){
+      @include span-columns(1, 3);
+    }
+    @include at-breakpoint($phone){
+      line-height:50px;
+      height:50px;
+      @include span-columns(1, 1);
+      position:absolute;
+    }
+    .logo{
+      float:left;
+      @include device-hide-element($phone);
+      @include device-show-element($phone);
+      > img{
+        margin:14px auto 0;
+        @include at-breakpoint($phone){
+          margin:0 auto 0;
+        }
+      }
+      &.btn-menu{
+        @include pie-clearfix;
+        width:100%;
+        .logo{
+          display:block;
+          text-indent:-5000px;
+          background: url(../images/logo2x.png) center left no-repeat;
+          background-size:100%;
+          float:left;
+          height:50px;
+          width:115px;
+          margin:0 1em;
+          @media only screen and (-webkit-min-device-pixel-ratio: 2),
+            only screen and (-moz-min-device-pixel-ratio: 2),
+            only screen and (-o-min-device-pixel-ratio: 2/1),
+            only screen and (min-device-pixel-ratio: 2) {
+              background-size:100%;
+              width:80px;
+            }
+        }
+        .icon-menu{
+          float:left;
+          color:#fff;
+          line-height:43px;
+          height:50px;
+          font:{
+            size:1.2em;
+          }
+          @include set-icon($close-filter);
+          .menu-opened &{
+            @include set-icon($open-filter);
+          }
+        }
+      }
+    }
+    >span{
+      float:left;
+      margin-left:3.5em;
+      font:{
+        size:$f-13;
+      }
+      @include device-hide-element($phone);
+      @include device-hide-element($tablet);
+    }
+  }
+  .navigation-bar{
+    @include span-columns(1, 2);
+    float:right;
+    @include at-breakpoint($tablet){
+      @include span-columns(2, 3);
+    }
+    @include at-breakpoint($phone){
+      @include opacity(1);
+      width:100%;
+      position:absolute;
+      top:50px;
+      left:0;
+      -webkit-transform: translateY(-80px);
+      @include transition(-webkit-transform .2s ease-in-out);
+      overflow:hidden;
+      //@include transition(height .2s ease-in-out);
+      .menu-opened & {
+        height:80px;
+        -webkit-transform: translateY(0);
+      }
+    }
+    > ul{
+      @include pie-clearfix;
+      @include at-breakpoint($phone){
+        border-top:1px solid #444;
+      }
+      >li{
+        float:left;
+        line-height:78px;
+        height:78px;
+        @include span-columns(1, 3);
+        text-align:center;
+        @include at-breakpoint($phone){
+          @include span-columns(1, 3);
+          &:first-child{
+            a{
+              border:none;
+            }
+          }
+        }
+        a{
+          @extend %text;
+          white-space:nowrap;
+          color:#fff;
+          display:block;
+          font:{
+            size:$f-10;
+          }
+          @include at-breakpoint($phone){
+            border-left:1px solid #444;
+            letter-spacing:0.1em;
+          }
+          &.contact{
+            @include grey-color(20%, 5, 'false');
+            @include at-breakpoint($phone){
+              @include grey-color(15%, 5, 'false');
+            }
+          }
+          &.store-list{
+            @include grey-color(30%, 5, 'false');
+            @include at-breakpoint($phone){
+              @include grey-color(15%, 5, 'false');
+            }
+          }
+          &.store-concept, &.store-concept-link{
+            @include grey-color(40%, 5, 'false');
+            @include at-breakpoint($phone){
+              @include grey-color(15%, 5, 'false');
+            }
+          }
+        }
+        &.wrap-store-concept{
+          display:block;
+          .internal &{
+            display:none;
+          }
+        }
+        &.wrap-store-concept-link{
+          display:none;
+          .internal &{
+            display:block;
+          }
+        }
+        @include at-breakpoint($phone){
+           &.wrap-store-concept{
+            display:none;
+          }
+          &.wrap-store-concept-link{
+            display:block;
+          }
+        }
+      }
+    }
+  }
+  //only for smartphone
+  .action-bar-mobile{
+    @include device-show-element($phone);
+    float:right;
+    position: relative;
+    z-index: 9;
+    > li{
+      float:left;
+      >a{
+        display:block;
+        width:65px;
+        text-align:center;
+        line-height:50px;
+        color: #fff;
+        &:before{
+          vertical-align:top;
+          line-height:50px;
+        }
+        font:{
+          size:2.5em;
+        }
+        &.store, &.map{
+          @include grey-color(20%, 5, 'false');
+        }
+        &.store{
+          display:block;
+          .internal &{
+            display:none;
+          }
+        }
+        &.map-link{
+          display:none;
+          @include grey-color(30%, 5, 'false');
+          .internal &{
+            display:block;
+          }
+        }
+        &.map{
+          @include grey-color(30%, 5, 'false');
+          .internal &{
+            display:none;
+          }
+        }
+      }
+    }
+    &.store-opened{
+      > li{
+        > a{
+          &.map{
+            display:block;
+          }
+          &.store{
+            display:none;
+          }
+        }
+      }
+    }
+  }
+}

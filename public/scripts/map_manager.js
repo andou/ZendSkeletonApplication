@@ -376,7 +376,6 @@
       this.directionsDisplay.setDirections({
         routes: []
       });
-      console.log(this.startMarker);
       if (this.startMarker != null) {
         this.startMarker.setMap(null);
       }
