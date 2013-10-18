@@ -1,0 +1,23 @@
+<!--OVERLAY START-->
+<div class="wrap-overlay">
+  <div class="overlay">
+    <div class="locateFail">
+      <h1 class="logo" ><img align="middle" src="/public/images/splash-logo.png" alt="<?php echo $this->translate('Ermenegildo Zegna') ?>"></h1>
+      <div class="errMessage">
+        <p><?php echo $this->translate('Unfortunately we were unable to locate your position,') ?>
+          <br/><?php echo $this->translate('please insert an address below to find all the stores around you.') ?></p>
+      </div>
+      <hr>
+      <div class="locateClient">
+        <form method="get" accept-charset="utf-8">
+          <label for="locateClient" class="label"><?php echo $this->translate('Find a Store') ?></label>
+          <div class="wrap-search">
+            <input id="locateClient" type="text" value="Milan, Italy" placeholder="" class="js-search_input">
+            <input type="submit" value="p" class="js-search_btn">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--OVERLAY ENDS-->

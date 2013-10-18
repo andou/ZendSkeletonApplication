@@ -9,6 +9,10 @@ abstract class LocalizedController extends AbstractActionController {
   const DEFAULT_STORE = 'en';
 
   protected $_config;
+  
+  protected function _init(){
+    $this->layout()->lang = $this->getLang();
+  }
 
   protected function getLang() {
     $lang_param = $this->params(LANG_PARAMETER_NAME) ? strtolower($this->params(LANG_PARAMETER_NAME)) : $this->getDefaultStoreCode();
