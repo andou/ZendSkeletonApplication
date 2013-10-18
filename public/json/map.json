@@ -1,0 +1,88 @@
+{
+  "markers": {
+    "marker": [
+      {
+        "title": "Zegna store",
+        "address": "Via Monte Napoleone, 20121",
+        "city": "Milano",
+        "country": "Italy",
+        "cap":"2100",
+        "opening_hours": "From 10 to 12",
+        "tel": "54637782",
+        "fax": "3454654",
+        "email": "zegna@info.com",
+        "longitude": "9.19344",
+        "latitude": "45.46939",
+        "photo":"/public/images/stores/zegnaglobal.jpg",
+        "new_store":"0",
+        "brands": {
+          "brand": [
+            "ermenegildozegna",
+            "zegnasport"
+          ]
+        }
+      },
+      {
+        "title": "Zegna Global store Zegna Global",
+        "address": "Aeroporto Forlanini Linate",
+        "city": "Milano",
+        "country": "Italy",
+        "cap":"2100",
+        "opening_hours": "From 10 to 12",
+        "tel": "54637782",
+        "fax": "3454654",
+        "email": "zegna@info.com",
+        "longitude": "9.2797",
+        "latitude": "45.46299",
+        "photo":"/public/images/stores/zegnaglobal.jpg",
+        "new_store":"1",
+        "brands": {
+            "brand": [
+              "ermenegildozegna"
+          ]
+        }
+      },
+      {
+        "title": "Zegna Global store",
+        "address": "via S. Radegonda 3",
+        "city": "Milano",
+        "country": "Italy",
+        "cap":"2100",
+        "opening_hours": "From 10 to 12",
+        "tel": "54637782",
+        "fax": "3454654",
+        "email": "zegna@info.com",
+        "longitude": "9.19210",
+        "latitude": "45.46604",
+        "new_store":"1",
+        "photo":"/public/images/stores/zegnaglobal.jpg",
+        "brands": {
+          "brand": [
+            "zegnasport"
+          ]
+        }
+      },
+      {
+        "title": "Zegna Global store",
+        "address": "Piazza Duomo",
+        "city": "Milano",
+        "country": "Italy",
+        "cap":"2100",
+        "opening_hours": "From 10 to 12",
+        "tel": "54637782",
+        "fax": "3454654",
+        "email": "zegna@info.com",
+        "longitude": "9.18930",
+        "latitude": "45.46444",
+        "photo":"/public/images/stores/zegnaglobal.jpg",
+        "new_store":"0",
+        "brands": {
+          "brand": [
+            "ermenegildozegna",
+            "zegnasport"
+          ]
+        }
+      }
+    ]
+  }
+}

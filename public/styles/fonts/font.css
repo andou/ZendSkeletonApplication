@@ -1,0 +1,10 @@
+@font-face {
+	font-family: 'IconFont';
+	src:url('ZegnaSL.eot');
+	src:url('ZegnaSL.eot?#iefix') format('embedded-opentype'),
+		url('ZegnaSL.woff') format('woff'),
+		url('ZegnaSL.ttf') format('truetype'),
+		url('ZegnaSL.svg#ZegnaSL') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
