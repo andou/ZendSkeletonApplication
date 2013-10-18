@@ -30,10 +30,10 @@
       this.map_container = this.ref.get(0);
       this.def_long = -84.575195;
       this.def_lat = 44.139497;
-      this.icon = "/public/images/marker.png";
-      this.iconA = "/public/images/marker_a.png";
-      this.iconB = "/public/images/marker_b.png";
-      this.data_url = "/public/json/map.json";
+      this.icon = "images/marker.png";
+      this.iconA = "images/marker_a.png";
+      this.iconB = "images/marker_b.png";
+      this.data_url = "json/map.json";
       this.markers = [];
       this.active_brands = [];
       if (!window.desktop_size) {

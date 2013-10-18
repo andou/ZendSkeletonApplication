@@ -31,7 +31,7 @@
     ?>
 
   </head>
-  <body>
+  <body data-publicpath=""<?php if($this->body_class):?> class ="<?php echo $this->body_class;?>"<?php endif;?>>
   <?php
   echo $this->content;
   ?>
@@ -72,9 +72,6 @@
           ->appendFile($this->basePath() . '/scripts/splash.js', 'text/javascript', array('charset' => 'utf-8',))
           ->appendFile($this->basePath() . '/scripts/scrollbar_helper.js', 'text/javascript', array('charset' => 'utf-8',))
           ->appendFile($this->basePath() . '/scripts/application.js', 'text/javascript', array('charset' => 'utf-8',))
-          ->appendFile($this->basePath() . '/scripts/social_sharing.js', 'text/javascript', array('charset' => 'utf-8',))
-          ->appendFile($this->basePath() . '/scripts/social_sharing.js', 'text/javascript', array('charset' => 'utf-8',))
-          ->appendFile($this->basePath() . '/scripts/social_sharing.js', 'text/javascript', array('charset' => 'utf-8',))
   ;
   ?>
     

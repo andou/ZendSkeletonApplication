@@ -12,21 +12,19 @@ class StorelocatorController extends LocalizedController {
   const TEMPL_PREFIX = 'Storelocator/Storelocator/';
 
   protected function _init() {
-    $this->_view = new ViewModel();
-    $this->_view->setTemplate(self::TEMPL_PREFIX . 'content/page');
+    $this->_view = $this->getTemplateView('content/page');
 
-
-    $headerView = new ViewModel();
-    $headerView->setTemplate(self::TEMPL_PREFIX . 'content/header');
-
-
-    $overlayView = new ViewModel();
-    $overlayView->setTemplate(self::TEMPL_PREFIX . 'content/overlay');
-
-    $this->_view->addChild($overlayView, 'overlay')
-            ->addChild($headerView, 'header');
+    $this->_view
+            ->addChild($this->getTemplateView("content/overlay"), 'overlay')
+            ->addChild($this->getTemplateView("content/header"), 'header');
 
     parent::_init();
+  }
+
+  protected function getTemplateView($template_name) {
+    $view = new ViewModel();
+    $view->setTemplate(self::TEMPL_PREFIX . '' . $template_name);
+    return $view;
   }
 
   public function indexAction() {
@@ -36,23 +34,52 @@ class StorelocatorController extends LocalizedController {
         'lang' => $this->getLang(),
     ));
     $page_content->setTemplate(self::TEMPL_PREFIX . 'pages/index');
+    $page_content
+            ->addChild($this->getTemplateView("content/store-concept-preview"), 'store_concept_preview')
+            ->addChild($this->getTemplateView("content/toolbar"), 'toolbar');
+
+
+
+    $this->_view
+            ->addChild($page_content, 'page_content');
+
+    return $this->_view;
+  }
+
+  public function allstoresAction() {
+    $this->_init();
+
+    $page_content = new ViewModel(array(
+        'lang' => $this->getLang(),
+    ));
+    $page_content->setTemplate(self::TEMPL_PREFIX . 'pages/all-stores');
 
     $this->_view->addChild($page_content, 'page_content');
 
     return $this->_view;
   }
 
-  public function storesAction() {
+  public function storeconceptAction() {    
     $this->_init();
 
     $page_content = new ViewModel(array(
         'lang' => $this->getLang(),
     ));
-    $page_content->setTemplate(self::TEMPL_PREFIX . 'pages/stores');
+    $page_content->setTemplate(self::TEMPL_PREFIX . 'pages/store-concept');
 
     $this->_view->addChild($page_content, 'page_content');
 
+    $this->layout()->body_class = 'internal';
+    
     return $this->_view;
+  }
+
+  public function storesAction() {
+    return $this->indexAction();
+  }
+
+  public function directionsAction() {
+    return $this->indexAction();
   }
 
 //  public function countryAction() {
