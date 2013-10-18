@@ -1,8 +1,15 @@
 <?php
 
+define("LANG_PARAMETER_NAME", 'lang');
+
+$default_lang = 'en';
+
 return array(
     'locale' => array(
-        'default_store_code' => 'it_it'
+        'default_lang' => $default_lang,
+        'allowed_lang' => array(
+            'en', 'it', 'es', 'fi'
+        )
     ),
     'controllers' => array(
         'invokables' => array(
@@ -13,10 +20,13 @@ return array(
         'routes' => array(
             'storelocator_locale' => array(
                 'type' => 'segment',
-                'options' => array(//this will work with a 5 digit store code, a default store code and action with 6 or more chars
-                    'route' => '[/:store_code][/:action][/:id]',
+                'options' => array(//this will work with a 2 digit store code, a default store code and action with 3 or more chars
+                    'route' => '[/:lang][/:action][/:id]',
+                    'defaults' => array(
+                        'lang' => $default_lang,
+                    ),
                     'constraints' => array(
-                        'store_code' => '[a-z_]{5}',
+                        'lang' => '[a-z_]{2}',
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id' => '[a-zA-Z0-9_-]*',
                     ),

@@ -7,10 +7,9 @@ use Zend\View\Model\ViewModel;
 
 class StorelocatorController extends LocalizedController {
 
-  public function indexAction() {
-
+  public function indexAction() {    
     return new ViewModel(array(
-        'store_code' => $this->getStoreCode(),
+        'lang' => $this->getLang(),
     ));
   }
 
@@ -21,7 +20,7 @@ class StorelocatorController extends LocalizedController {
       $_country_id = $this->params('id');
 
       return new ViewModel(array(
-          'store_code' => $this->getStoreCode(),
+          'lang' => $this->getLang(),
           'country_id' => $_country_id ? $_country_id : 'none'
       ));
     }
